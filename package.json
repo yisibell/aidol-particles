@@ -1,0 +1,50 @@
+{
+  "name": "@aidol/particles",
+  "version": "1.0.0",
+  "main": "dist/aidol-particles.umd.min.js",
+  "description": "a particulate background component based on particles.js.",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name aidol-particles src/pkg/main.vue",
+    "lint": "vue-cli-service lint"
+  },
+  "author": {
+    "name": "elenh",
+    "email": "yisiwings@163.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yisibell/aidol-particles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yisibell/aidol-particles/issues"
+  },
+  "homepage": "https://github.com/yisibell/aidol-particles",
+  "keywords": [
+    "particles.js",
+    "aidol-particles",
+    "vue",
+    "component"
+  ],
+  "peerDependencies": {
+    "particles.js": "^2.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.9",
+    "sass-loader": "^9.0.1",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
+    "particles.js": "^2.0.0"
+  }
+}
