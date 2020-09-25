@@ -27,9 +27,6 @@
     "vue",
     "component"
   ],
-  "peerDependencies": {
-    "particles.js": "^2.0.0"
-  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
@@ -44,7 +41,6 @@
     "sass": "^1.26.9",
     "sass-loader": "^9.0.1",
     "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11",
-    "particles.js": "^2.0.0"
+    "vue-template-compiler": "^2.6.11"
   }
 }
