@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="ai-particles">
+  <div :id="id" class="ai-particles" :style="[style]">
     <slot name="default"></slot>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
       type: [Object, undefined],
       default: undefined
     },
+    // 容器背景色
+    background: {
+      type: String,
+      default: 'skyblue'
+    },
     // 粒子形状
     shapeType: {
       type: String,
@@ -24,14 +29,38 @@ export default {
     shapeImage: {
       type: Object,
       default: () => ({
-        src: ''
+        src: '',
+        width: 100,
+        height: 100
       })
+    },
+    // 粒子链接线样式
+    lineLinked: {
+      type: Object,
+      default: () => ({
+        enable: true,
+        distance: 300, // 链接距离
+        color: "#ffffff", // 颜色
+        opacity: 0.4, // 透明度
+        width: 2 // 粗细
+      })
+    },
+    // 粒子移动速度
+    moveSpeed: {
+      type: Number,
+      default: 10
     }
   },
   data() {
     return {}
   },
   computed: {
+    style() {
+      const { background } = this
+      return {
+        background
+      }
+    },
     id() {
       return `ai-particles-${this._uid}`
     },
@@ -51,7 +80,7 @@ export default {
             "value": "#ffffff"
           },
           "shape": {
-            "type": "star",
+            "type": this.shapeType,
             "stroke": {
               "width": 0,
               "color": "#000000"
@@ -59,11 +88,7 @@ export default {
             "polygon": {
               "nb_sides": 5
             },
-            "image": {
-              "src": "img/github.svg",
-              "width": 100,
-              "height": 100
-            }
+            "image": this.shapeImage
           },
           "opacity": {
             "value": 0.5,
@@ -85,16 +110,10 @@ export default {
               "sync": false
             }
           },
-          "line_linked": {
-            "enable": true,
-            "distance": 300,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 2
-          },
+          "line_linked": this.lineLinked,
           "move": {
             "enable": true,
-            "speed": 6,
+            "speed": this.moveSpeed,
             "direction": "none",
             "random": false,
             "straight": false,
@@ -166,7 +185,6 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #b61924;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
