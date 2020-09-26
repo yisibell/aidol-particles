@@ -22,7 +22,6 @@ const cancelRequestAnimFrame = ( function() {
     clearTimeout
 } )();
 
-
 const hexToRgb = (hex) => {
   // By Tim Down - http://stackoverflow.com/a/5624139/3493650
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -61,7 +60,7 @@ const deepExtend = function(destination, source) {
 
 const pJS = function(tag_id, params) {
 
-  var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
+  const canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
 
   /* particles.js variables with default values */
   this.pJS = {
@@ -455,6 +454,17 @@ const pJS = function(tag_id, params) {
     let radius;
     let opacity;
     let color_value;
+    let img_obj
+
+    function draw(){
+      pJS.canvas.ctx.drawImage(
+        img_obj,
+        p.x-radius,
+        p.y-radius,
+        radius*2,
+        radius*2 / p.img.ratio
+      );
+    }
 
     if(p.radius_bubble != undefined){
       radius = p.radius_bubble; 
@@ -515,20 +525,12 @@ const pJS = function(tag_id, params) {
 
       case 'image':
 
-        function draw(){
-          pJS.canvas.ctx.drawImage(
-            img_obj,
-            p.x-radius,
-            p.y-radius,
-            radius*2,
-            radius*2 / p.img.ratio
-          );
-        }
+       
 
         if(pJS.tmp.img_type == 'svg'){
-          var img_obj = p.img.obj;
+          img_obj = p.img.obj;
         }else{
-          var img_obj = pJS.tmp.img_obj;
+          img_obj = pJS.tmp.img_obj;
         }
 
         if(img_obj){
@@ -1147,6 +1149,7 @@ const pJS = function(tag_id, params) {
       pJS.interactivity.el.addEventListener('mousemove', function(e){
         let pos_x
         let pos_y
+
         if(pJS.interactivity.el == window){
           pos_x = e.clientX,
           pos_y = e.clientY;
@@ -1280,6 +1283,7 @@ const pJS = function(tag_id, params) {
         rgbHex = /#([0-9A-F]{3,6})/gi,
         coloredSvgXml = svgXml.replace(rgbHex, function () {
           let color_value
+
           if(p.color.rgb){
             color_value = 'rgba('+p.color.rgb.r+','+p.color.rgb.g+','+p.color.rgb.b+','+p.opacity+')';
           }else{
