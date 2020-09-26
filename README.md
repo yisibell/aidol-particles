@@ -12,9 +12,9 @@ $ npm i @aidol/particles -S
 
 ``` html
 <template>
-<ai-particles>
-  <div> some content </div>
-</ai-particles>
+  <ai-particles>
+    <div> some content </div>
+  </ai-particles>
 </template>
 ```
 

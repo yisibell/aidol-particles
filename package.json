@@ -1,6 +1,6 @@
 {
   "name": "@aidol/particles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/aidol-particles.umd.min.js",
   "description": "a particulate background component based on particles.js.",
   "scripts": {
