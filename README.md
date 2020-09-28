@@ -4,7 +4,7 @@ a particulate background component based on particles.js.
 
 # Preview
 
-<img src="/docs/images/example.gif" width="100%" />
+![image](https://github.com/yisibell/aidol-particles/blob/master/docs/images/example.gif)
 
 # Installation
 
