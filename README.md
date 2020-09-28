@@ -4,7 +4,7 @@ a particulate background component based on particles.js.
 
 # Preview
 
-<img src="/docs/images/demo.gif" width="100%" />
+<img src="/docs/images/example.gif" width="100%" />
 
 # Installation
 
