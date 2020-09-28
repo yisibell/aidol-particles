@@ -2,6 +2,10 @@
 
 a particulate background component based on particles.js.
 
+# Preview
+
+<img src="/docs/images/demo.gif" width="100%" />
+
 # Installation
 
 ``` bash

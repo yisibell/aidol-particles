@@ -189,17 +189,6 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 
 /***/ }),
 
-/***/ "07cd":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_3ec3fbdb_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("c84b");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_3ec3fbdb_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_3ec3fbdb_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_3ec3fbdb_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "0cfb":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2340,48 +2329,18 @@ module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
 
 /***/ }),
 
-/***/ "5899":
-/***/ (function(module, exports) {
-
-// a string of all valid unicode whitespaces
-// eslint-disable-next-line max-len
-module.exports = '\u0009\u000A\u000B\u000C\u000D\u0020\u00A0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
-
-
-/***/ }),
-
-/***/ "58a8":
+/***/ "5b4b":
 /***/ (function(module, exports, __webpack_require__) {
 
-var requireObjectCoercible = __webpack_require__("1d80");
-var whitespaces = __webpack_require__("5899");
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-var whitespace = '[' + whitespaces + ']';
-var ltrim = RegExp('^' + whitespace + whitespace + '*');
-var rtrim = RegExp(whitespace + whitespace + '*$');
-
-// `String.prototype.{ trim, trimStart, trimEnd, trimLeft, trimRight }` methods implementation
-var createMethod = function (TYPE) {
-  return function ($this) {
-    var string = String(requireObjectCoercible($this));
-    if (TYPE & 1) string = string.replace(ltrim, '');
-    if (TYPE & 2) string = string.replace(rtrim, '');
-    return string;
-  };
-};
-
-module.exports = {
-  // `String.prototype.{ trimLeft, trimStart }` methods
-  // https://tc39.github.io/ecma262/#sec-string.prototype.trimstart
-  start: createMethod(1),
-  // `String.prototype.{ trimRight, trimEnd }` methods
-  // https://tc39.github.io/ecma262/#sec-string.prototype.trimend
-  end: createMethod(2),
-  // `String.prototype.trim` method
-  // https://tc39.github.io/ecma262/#sec-string.prototype.trim
-  trim: createMethod(3)
-};
-
+// load the styles
+var content = __webpack_require__("6024");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("19b58e2e", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2572,6 +2531,20 @@ module.exports = function (input) {
   }
   return encoded.join('.');
 };
+
+
+/***/ }),
+
+/***/ "6024":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".ai-particles[data-v-2c7604ee]{position:absolute;width:100%;height:100%;background:linear-gradient(#330e6a,#30c8cc 99%) 0 0/auto repeat scroll padding-box border-box transparent;background-repeat:no-repeat;background-size:cover;background-position:50% 50%}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -2806,30 +2779,6 @@ var TEMPLATE = String(String).split('String');
 
 /***/ }),
 
-/***/ "7156":
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__("861d");
-var setPrototypeOf = __webpack_require__("d2bb");
-
-// makes subclassing work correct for wrapped built-ins
-module.exports = function ($this, dummy, Wrapper) {
-  var NewTarget, NewTargetPrototype;
-  if (
-    // it can work only with native `setPrototypeOf`
-    setPrototypeOf &&
-    // we haven't completely correct pre-ES6 way for getting `new.target`, so use this
-    typeof (NewTarget = dummy.constructor) == 'function' &&
-    NewTarget !== Wrapper &&
-    isObject(NewTargetPrototype = NewTarget.prototype) &&
-    NewTargetPrototype !== Wrapper.prototype
-  ) setPrototypeOf($this, NewTargetPrototype);
-  return $this;
-};
-
-
-/***/ }),
-
 /***/ "7418":
 /***/ (function(module, exports) {
 
@@ -2853,6 +2802,17 @@ module.exports = function (NAME) {
   });
 };
 
+
+/***/ }),
+
+/***/ "7553":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_2c7604ee_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5b4b");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_2c7604ee_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_2c7604ee_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_main_vue_vue_type_style_index_0_id_2c7604ee_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -3309,20 +3269,6 @@ module.exports = DESCRIPTORS ? function (object, key, value) {
   object[key] = value;
   return object;
 };
-
-
-/***/ }),
-
-/***/ "9261":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".ai-particles[data-v-3ec3fbdb]{position:absolute;width:100%;height:100%;background-repeat:no-repeat;background-size:cover;background-position:50% 50%}", ""]);
-// Exports
-module.exports = exports;
 
 
 /***/ }),
@@ -4353,92 +4299,6 @@ module.exports = function (argument) {
 
 /***/ }),
 
-/***/ "a9e3":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var DESCRIPTORS = __webpack_require__("83ab");
-var global = __webpack_require__("da84");
-var isForced = __webpack_require__("94ca");
-var redefine = __webpack_require__("6eeb");
-var has = __webpack_require__("5135");
-var classof = __webpack_require__("c6b6");
-var inheritIfRequired = __webpack_require__("7156");
-var toPrimitive = __webpack_require__("c04e");
-var fails = __webpack_require__("d039");
-var create = __webpack_require__("7c73");
-var getOwnPropertyNames = __webpack_require__("241c").f;
-var getOwnPropertyDescriptor = __webpack_require__("06cf").f;
-var defineProperty = __webpack_require__("9bf2").f;
-var trim = __webpack_require__("58a8").trim;
-
-var NUMBER = 'Number';
-var NativeNumber = global[NUMBER];
-var NumberPrototype = NativeNumber.prototype;
-
-// Opera ~12 has broken Object#toString
-var BROKEN_CLASSOF = classof(create(NumberPrototype)) == NUMBER;
-
-// `ToNumber` abstract operation
-// https://tc39.github.io/ecma262/#sec-tonumber
-var toNumber = function (argument) {
-  var it = toPrimitive(argument, false);
-  var first, third, radix, maxCode, digits, length, index, code;
-  if (typeof it == 'string' && it.length > 2) {
-    it = trim(it);
-    first = it.charCodeAt(0);
-    if (first === 43 || first === 45) {
-      third = it.charCodeAt(2);
-      if (third === 88 || third === 120) return NaN; // Number('+0x1') should be NaN, old V8 fix
-    } else if (first === 48) {
-      switch (it.charCodeAt(1)) {
-        case 66: case 98: radix = 2; maxCode = 49; break; // fast equal of /^0b[01]+$/i
-        case 79: case 111: radix = 8; maxCode = 55; break; // fast equal of /^0o[0-7]+$/i
-        default: return +it;
-      }
-      digits = it.slice(2);
-      length = digits.length;
-      for (index = 0; index < length; index++) {
-        code = digits.charCodeAt(index);
-        // parseInt parses a string to a first unavailable symbol
-        // but ToNumber should return NaN if a string contains unavailable symbols
-        if (code < 48 || code > maxCode) return NaN;
-      } return parseInt(digits, radix);
-    }
-  } return +it;
-};
-
-// `Number` constructor
-// https://tc39.github.io/ecma262/#sec-number-constructor
-if (isForced(NUMBER, !NativeNumber(' 0o1') || !NativeNumber('0b1') || NativeNumber('+0x1'))) {
-  var NumberWrapper = function Number(value) {
-    var it = arguments.length < 1 ? 0 : value;
-    var dummy = this;
-    return dummy instanceof NumberWrapper
-      // check on 1..constructor(foo) case
-      && (BROKEN_CLASSOF ? fails(function () { NumberPrototype.valueOf.call(dummy); }) : classof(dummy) != NUMBER)
-        ? inheritIfRequired(new NativeNumber(toNumber(it)), dummy, NumberWrapper) : toNumber(it);
-  };
-  for (var keys = DESCRIPTORS ? getOwnPropertyNames(NativeNumber) : (
-    // ES3:
-    'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
-    // ES2015 (in case, if modules with ES2015 Number statics required before):
-    'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
-    'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
-  ).split(','), j = 0, key; keys.length > j; j++) {
-    if (has(NativeNumber, key = keys[j]) && !has(NumberWrapper, key)) {
-      defineProperty(NumberWrapper, key, getOwnPropertyDescriptor(NativeNumber, key));
-    }
-  }
-  NumberWrapper.prototype = NumberPrototype;
-  NumberPrototype.constructor = NumberWrapper;
-  redefine(global, NUMBER, NumberWrapper);
-}
-
-
-/***/ }),
-
 /***/ "ac1f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4722,21 +4582,6 @@ var store = global[SHARED] || setGlobal(SHARED, {});
 
 module.exports = store;
 
-
-/***/ }),
-
-/***/ "c84b":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("9261");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("eece289e", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -5532,15 +5377,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"64a95902-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pkg/main.vue?vue&type=template&id=3ec3fbdb&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"64a95902-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pkg/main.vue?vue&type=template&id=2c7604ee&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ai-particles",style:([_vm.style]),attrs:{"id":_vm.id}},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/pkg/main.vue?vue&type=template&id=3ec3fbdb&scoped=true&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
-var es_number_constructor = __webpack_require__("a9e3");
+// CONCATENATED MODULE: ./src/pkg/main.vue?vue&type=template&id=2c7604ee&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.fill.js
 var es_array_fill = __webpack_require__("cb29");
@@ -7025,7 +6867,6 @@ particlesJS.load = function (tag_id, path_config_json, callback) {
 
 /* harmony default export */ var particles = (particlesJS);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pkg/main.vue?vue&type=script&lang=js&
-
 //
 //
 //
@@ -7044,45 +6885,223 @@ particlesJS.load = function (tag_id, path_config_json, callback) {
     // 容器背景色
     background: {
       type: String,
-      default: 'skyblue'
+      default: ''
     },
-    // 粒子形状
-    shapeType: {
-      type: String,
-      default: 'star'
-    },
-    // 自定义粒子图片
-    shapeImage: {
-      type: Object,
-      default: function _default() {
-        return {
-          src: '',
-          width: 100,
-          height: 100
-        };
-      }
-    },
-    // 粒子链接线样式
-    lineLinked: {
+    // 粒子连接线
+    particlesLineLinked: {
       type: Object,
       default: function _default() {
         return {
           enable: true,
+          // 是否使用连接线
           distance: 300,
           // 链接距离
           color: "#ffffff",
           // 颜色
           opacity: 0.4,
-          // 透明度
-          width: 2 // 粗细
+          // 不透明度
+          width: 1 // 粗细
 
         };
       }
     },
-    // 粒子移动速度
-    moveSpeed: {
-      type: Number,
-      default: 10
+    // 粒子数量
+    particlesNumber: {
+      type: Object,
+      default: function _default() {
+        return {
+          value: 30,
+          // 粒子数量
+          density: {
+            enable: true,
+            value_area: 800 // 粒子散布区域大小
+
+          }
+        };
+      }
+    },
+    // 粒子颜色
+    particlesColor: {
+      type: String,
+      default: '#ffffff'
+    },
+    // 粒子形状
+    particlesShape: {
+      type: Object,
+      default: function _default() {
+        return {
+          // 粒子形状 {string | Array of string}
+          // "circle" "edge" "triangle" "polygon" "star" "image" 
+          // ["circle", "triangle", "image"]
+          type: ['star', 'circle'],
+          stroke: {
+            width: 0,
+            // 粒子边线粗细程度
+            color: '#222222' // 粒子边线颜色
+
+          },
+          polygon: {
+            nb_sides: 5 // 粒子多边形的边数，可以替代 type
+
+          },
+          image: {
+            // 自定义粒子形状图片
+            src: '',
+            width: 100,
+            height: 100
+          }
+        };
+      }
+    },
+    // 粒子不透明度
+    particlesOpacity: {
+      type: Object,
+      default: function _default() {
+        return {
+          value: 0.5,
+          // 不透明度
+          random: false,
+          // 是否开启随机不透明度
+          anim: {
+            enable: true,
+            // 是否开启渐变动画
+            speed: 1,
+            // 渐变动画速度
+            opacity_min: 0.1,
+            // 渐变动画最小不透明度
+            sync: false // 是否开启同步渐变动画模式
+
+          }
+        };
+      }
+    },
+    // 粒子大小
+    particlesSize: {
+      type: Object,
+      default: function _default() {
+        return {
+          value: 6,
+          // 粒子大小
+          random: false,
+          // 是否启用随机粒子大小
+          anim: {
+            enable: true,
+            // 是否开启粒子大小渐变动画
+            speed: 20,
+            // 粒子大小渐变动画速度，值越大，越快
+            size_min: 0.1,
+            // 粒子大小渐变时的最小值
+            sync: false // 是否开启同步变化
+
+          }
+        };
+      }
+    },
+    // 粒子移动效果
+    particlesMove: {
+      type: Object,
+      default: function _default() {
+        return {
+          enable: true,
+          // 粒子是否开启移动效果
+          speed: 4,
+          // 粒子移动速度，值越大，速度越快
+          // 粒子整体移动方向
+          // "none" "top" "top-right" "right" "bottom-right" "bottom" "bottom-left" "left" "top-left"
+          direction: 'none',
+          random: false,
+          // 移动方向是否随机
+          straight: false,
+          // 是否以笔直方式移动
+          // 当粒子接触容器边缘时的处理方式
+          // bounce 回弹 out 移出
+          out_mode: "bounce",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        };
+      }
+    },
+    retinaDetect: {
+      type: Boolean,
+      default: true
+    },
+    interactivityDetectOn: {
+      type: String,
+      default: 'canvas'
+    },
+    // 定义互动事件
+    interactivityEvents: {
+      type: Object,
+      default: function _default() {
+        return {
+          // 鼠标移至粒子的效果
+          onhover: {
+            enable: true,
+            // "grab"     抓取临近的
+            // "bubble"   泡沫球效果
+            // "repulse"  击退效果
+            // ["grab", "bubble"]
+            mode: 'grab'
+          },
+          // 鼠标点击粒子的效果
+          onclick: {
+            enable: false,
+            mode: "push"
+          },
+          // 互动事件调整
+          resize: true
+        };
+      }
+    },
+    // 定义互动模式
+    interactivityModes: {
+      type: Object,
+      default: function _default() {
+        return {
+          // 抓取效果
+          grab: {
+            distance: 200,
+            // 抓取范围
+            line_linked: {
+              opacity: 0.75
+            }
+          },
+          // 泡沫效应
+          bubble: {
+            distance: 200,
+            // 触发范围
+            size: 20,
+            // 泡沫增长大小
+            duration: 2,
+            // 动画持续时间
+            opacity: 0.8,
+            // 不透明度
+            speed: 10 // 动画速度
+
+          },
+          // 击退效果
+          repulse: {
+            distance: 100,
+            // 击退距离
+            duration: 0.4 // 动画持续时间
+
+          },
+          // 插入粒子效果
+          push: {
+            particles_nb: 1 // 插入数量
+
+          },
+          // 减少粒子效果
+          remove: {
+            particles_nb: 1 // 减少数量
+
+          }
+        };
+      }
     }
   },
   data: function data() {
@@ -7101,104 +7120,32 @@ particlesJS.load = function (tag_id, path_config_json, callback) {
     form: function form() {
       if (this.options) return this.options;
       return {
+        // 粒子
         "particles": {
-          "number": {
-            "value": 30,
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
+          // 数量
+          "number": this.particlesNumber,
+          // 颜色
           "color": {
-            "value": "#ffffff"
+            "value": this.particlesColor
           },
-          "shape": {
-            "type": this.shapeType,
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": this.shapeImage
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 10,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 80,
-              "size_min": 0.1,
-              "sync": false
-            }
-          },
-          "line_linked": this.lineLinked,
-          "move": {
-            "enable": true,
-            "speed": this.moveSpeed,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 1200
-            }
-          }
+          // 形状
+          "shape": this.particlesShape,
+          // 不透明度
+          "opacity": this.particlesOpacity,
+          // 大小
+          "size": this.particlesSize,
+          // 连接线
+          "line_linked": this.particlesLineLinked,
+          // 移动效果
+          "move": this.particlesMove
         },
+        // 互动
         "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": false,
-              "mode": "repulse"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "push"
-            },
-            "resize": true
-          },
-          "modes": {
-            "grab": {
-              "distance": 800,
-              "line_linked": {
-                "opacity": 1
-              }
-            },
-            "bubble": {
-              "distance": 800,
-              "size": 80,
-              "duration": 2,
-              "opacity": 0.8,
-              "speed": 10
-            },
-            "repulse": {
-              "distance": 400,
-              "duration": 0.4
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
-          }
+          "detect_on": this.interactivityDetectOn,
+          "events": this.interactivityEvents,
+          "modes": this.interactivityModes
         },
-        "retina_detect": true
+        "retina_detect": this.retinaDetect
       };
     }
   },
@@ -7213,8 +7160,8 @@ particlesJS.load = function (tag_id, path_config_json, callback) {
 });
 // CONCATENATED MODULE: ./src/pkg/main.vue?vue&type=script&lang=js&
  /* harmony default export */ var pkg_mainvue_type_script_lang_js_ = (mainvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/pkg/main.vue?vue&type=style&index=0&id=3ec3fbdb&lang=scss&scoped=true&
-var mainvue_type_style_index_0_id_3ec3fbdb_lang_scss_scoped_true_ = __webpack_require__("07cd");
+// EXTERNAL MODULE: ./src/pkg/main.vue?vue&type=style&index=0&id=2c7604ee&lang=scss&scoped=true&
+var mainvue_type_style_index_0_id_2c7604ee_lang_scss_scoped_true_ = __webpack_require__("7553");
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
@@ -7331,7 +7278,7 @@ var component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "3ec3fbdb",
+  "2c7604ee",
   null
   
 )
